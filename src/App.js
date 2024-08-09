@@ -3,6 +3,7 @@ import ListaDeNotas from "./Components/listaDeNotas/listaDeNotas";
 import FormularioCadastro from "./Components/formularioCadrastro/formularioCadastro";
 import "./style.css";
 import Footer from "./Components/footer/footer";
+import Header from "./Components/header/Header";
 
 class App extends Component {
     constructor() {
@@ -25,6 +26,9 @@ class App extends Component {
     render() {
         return (
             <div className="app-container">
+                <div className="header">
+                <Header/>
+                </div>
                 <div className="content">
                     <FormularioCadastro criarNota={this.criarNota.bind(this)} />
                     <ListaDeNotas notas={this.notas} deletarNota={this.deletarNota.bind(this)} />

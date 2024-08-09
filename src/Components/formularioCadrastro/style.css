@@ -15,7 +15,7 @@ form {
 
 input[type="text"],
 textarea {
-    width: 100%;
+    width: 98%;
     padding: 0.8rem;
     margin-bottom: 1rem;
     border-radius: 0.5rem;
@@ -56,7 +56,7 @@ button[type="submit"]:hover {
 /* Media query para telas menores */
 @media (max-width: 768px) {
     form {
-        width: calc(100% - 2rem); /* Garante que o formulário ocupe quase toda a largura da tela, com uma margem de 1rem de cada lado */
+        width: calc(85% - 2rem); /* Garante que o formulário ocupe quase toda a largura da tela, com uma margem de 1rem de cada lado */
         padding: 1.5rem;
         margin-bottom: 1rem; /* Ajusta a margem inferior para evitar sobreposição */
     }
