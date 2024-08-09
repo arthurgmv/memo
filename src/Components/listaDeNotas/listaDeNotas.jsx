@@ -1,13 +1,12 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import CardNota from "../CardNotas/cardNotas";
 import "./style.css";
 
 export default class ListaDeNotas extends Component {
-
-    render(){
-        return (<ul className="lista-de-notas">
-            {this.props.notas.map((nota, index) => {
-                return (
+    render() {
+        return (
+            <ul className="lista-de-notas">
+                {this.props.notas.map((nota, index) => (
                     <li key={index}>
                         <CardNota
                             titulo={nota.titulo}
@@ -15,9 +14,9 @@ export default class ListaDeNotas extends Component {
                             index={index}
                             deletarNota={this.props.deletarNota}
                         />
-                    </li>);
-            })}
-        </ul>)
+                    </li>
+                ))}
+            </ul>
+        );
     }
 }
-

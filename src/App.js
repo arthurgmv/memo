@@ -8,30 +8,38 @@ import Header from "./Components/header/Header";
 class App extends Component {
     constructor() {
         super();
-        this.notas = [];
-        this.state = {};
+        this.state = {
+            notas: []
+        };
     }
 
     criarNota(titulo, texto) {
         const novaNota = { titulo, texto };
-        this.notas.push(novaNota);
-        this.setState({ notas: this.notas });
+        this.setState((prevState) => ({
+            notas: [...prevState.notas, novaNota]
+        }));
     }
 
     deletarNota(index) {
-        this.notas.splice(index, 1);
-        this.setState({ notas: this.notas });
+        this.setState((prevState) => {
+            const novasNotas = [...prevState.notas];
+            novasNotas.splice(index, 1);
+            return { notas: novasNotas };
+        });
     }
 
     render() {
         return (
             <div className="app-container">
                 <div className="header">
-                <Header/>
+                    <Header/>
                 </div>
                 <div className="content">
                     <FormularioCadastro criarNota={this.criarNota.bind(this)} />
-                    <ListaDeNotas notas={this.notas} deletarNota={this.deletarNota.bind(this)} />
+                    <ListaDeNotas
+                        notas={this.state.notas}
+                        deletarNota={this.deletarNota.bind(this)}
+                    />
                 </div>
                 <Footer />
             </div>
