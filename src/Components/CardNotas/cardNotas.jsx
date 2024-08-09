@@ -8,6 +8,11 @@ export default class CardNota extends React.Component {
                     <h3 className="card-nota_titulo" style={{fontWeight: "bold"}}>Título</h3>
                 </header>
                 <p className="card-nota_texto">Escreva sua nota</p>
+                <button
+                    onClick={() => this.props.deletarNota(this.props.index)}
+                    className="botao-deletar">
+                    Deletar
+                </button>
             </section>
         )
     }

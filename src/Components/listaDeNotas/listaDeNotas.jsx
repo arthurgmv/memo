@@ -9,7 +9,12 @@ export default class ListaDeNotas extends Component {
             {this.props.notas.map((nota, index) => {
                 return (
                     <li key={index}>
-                        <CardNota/>
+                        <CardNota
+                            titulo={nota.titulo}
+                            texto={nota.texto}
+                            index={index}
+                            deletarNota={this.props.deletarNota}
+                        />
                     </li>);
             })}
         </ul>)

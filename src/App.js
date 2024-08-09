@@ -19,11 +19,18 @@ class App extends Component {
       })
   }
 
+    deletarNota(index) {
+        this.notas.splice(index, 1);
+        this.setState({
+            notas: this.notas,
+        });
+    }
+
   render(){
     return(
   <section>
     <FormularioCadastro criarNota={this.criarNota.bind(this)}/>
-    <ListaDeNotas notas={this.notas}/>
+    <ListaDeNotas notas={this.notas} deletarNota={this.deletarNota.bind(this)}/>
   </section>
   );
 }
