@@ -21,6 +21,14 @@ class App extends Component {
         this.setState(novoEstado);
     }
 
+    deletarCategoria(index) {
+        this.setState((prevState) => {
+            const novasCategorias = [...prevState.categorias];
+            novasCategorias.splice(index, 1);
+            return { categorias: novasCategorias };
+        });
+    }
+
     criarNota(titulo, texto) {
         const novaNota = { titulo, texto };
         this.setState((prevState) => ({
@@ -45,13 +53,14 @@ class App extends Component {
                 <div className="content">
                     <FormularioCadastro criarNota={this.criarNota.bind(this)} />
                     <main className="mainContent">
-                    <ListaDeCategoria
-                        adicionarCategoria={this.adicionarCategoria.bind(this)}
-                        categorias={this.state.categorias} />
-                    <ListaDeNotas
-                        notas={this.state.notas}
-                        deletarNota={this.deletarNota.bind(this)}
-                    />
+                        <ListaDeCategoria
+                            adicionarCategoria={this.adicionarCategoria.bind(this)}
+                            deletarCategoria={this.deletarCategoria.bind(this)}
+                            categorias={this.state.categorias} />
+                        <ListaDeNotas
+                            notas={this.state.notas}
+                            deletarNota={this.deletarNota.bind(this)}
+                        />
                     </main>
                 </div>
                 <Footer />
