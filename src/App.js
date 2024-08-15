@@ -51,12 +51,13 @@ class App extends Component {
                     <Header/>
                 </div>
                 <div className="content">
-                    <FormularioCadastro criarNota={this.criarNota.bind(this)} />
+                    <ListaDeCategoria
+                        adicionarCategoria={this.adicionarCategoria.bind(this)}
+                        deletarCategoria={this.deletarCategoria.bind(this)}
+                        categorias={this.state.categorias} />
+                    <FormularioCadastro categorias={this.state.categorias}
+                                        criarNota={this.criarNota.bind(this)} />
                     <main className="mainContent">
-                        <ListaDeCategoria
-                            adicionarCategoria={this.adicionarCategoria.bind(this)}
-                            deletarCategoria={this.deletarCategoria.bind(this)}
-                            categorias={this.state.categorias} />
                         <ListaDeNotas
                             notas={this.state.notas}
                             deletarNota={this.deletarNota.bind(this)}

@@ -1,0 +1,9 @@
+section {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-items: center;
+    max-width:50%;
+    margin-left: -20rem;
+    margin-bottom: -2rem;
+}

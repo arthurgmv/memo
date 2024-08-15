@@ -25,6 +25,23 @@ textarea {
     background-color: #fff;
 }
 
+select {
+    width: 102%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0.5rem rgba(0,0,0,0.2);
+}
+
+
 input[type="text"]::placeholder,
 textarea::placeholder {
     color: #999;
