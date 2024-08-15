@@ -21,6 +21,10 @@ footer {
     width: 100%;
 }
 
+.mainContent {
+    flex-grow: 3;
+}
+
 @media (max-width: 480px) {
     html {
         font-size: 12px;
@@ -30,3 +34,4 @@ footer {
         padding: 10px 0;
     }
 }
+
