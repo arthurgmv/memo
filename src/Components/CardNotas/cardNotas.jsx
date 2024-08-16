@@ -6,12 +6,13 @@ export default class CardNota extends React.Component {
     static propTypes = {
         titulo: PropTypes.string.isRequired,
         texto: PropTypes.string.isRequired,
+        categoria: PropTypes.string.isRequired,
         deletarNota: PropTypes.func.isRequired,
         index: PropTypes.number.isRequired
     };
 
     render() {
-        const { titulo, texto, deletarNota, index } = this.props;
+        const { titulo, texto, categoria, deletarNota, index } = this.props;
 
         return (
             <section className="card-nota">
@@ -23,7 +24,7 @@ export default class CardNota extends React.Component {
                 <p className="card-nota_texto">
                     {texto}
                 </p>
-                <h4>{this.props.categoria}</h4>
+                <p>{categoria}</p>
                 <button
                     onClick={() => deletarNota(index)}
                     className="botao-deletar">
