@@ -23,6 +23,7 @@ export default class CardNota extends React.Component {
                 <p className="card-nota_texto">
                     {texto}
                 </p>
+                <h4>{this.props.categoria}</h4>
                 <button
                     onClick={() => deletarNota(index)}
                     className="botao-deletar">

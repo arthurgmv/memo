@@ -6,7 +6,8 @@ export default class FormularioCadastro extends Component {
         super(props);
         this.state = {
             titulo: "",
-            texto: ""
+            texto: "",
+            categoria: "",
         };
     }
 
@@ -18,27 +19,34 @@ export default class FormularioCadastro extends Component {
         this.setState({ texto: e.target.value });
     }
 
+    handleMudancaCategoria(e) {
+        this.setState({ categoria: e.target.value });
+    }
+
     criarNota(e) {
         e.preventDefault();
-        const { titulo, texto } = this.state;
+        const { titulo, texto, categoria } = this.state;
 
         if (!titulo.trim() || !texto.trim()) {
             alert("A nota não pode ser vazia. Por favor, preencha o título e o texto.");
             return;
         }
 
-        this.props.criarNota(titulo, texto);
-        this.setState({ titulo: "", texto: "" });
+        this.props.criarNota(titulo, texto, categoria);
+        this.setState({ titulo: "", texto: "", categoria: "" });
     }
 
     render() {
         return (
             <div className="container">
                 <form onSubmit={this.criarNota.bind(this)}>
-
-                    <select className="form-cadastro_input">
-                        {this.props.categorias.map((categoria) => {
-                            return <option>{categoria}</option>;
+                    <select
+                        className="form-cadastro_input"
+                        value={this.state.categoria}
+                        onChange={this.handleMudancaCategoria.bind(this)}
+                    >
+                        {this.props.categorias.map((categoria, index) => {
+                            return <option key={index} value={categoria}>{categoria}</option>;
                         })}
                     </select>
                     <input

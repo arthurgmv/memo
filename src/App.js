@@ -29,8 +29,8 @@ class App extends Component {
         });
     }
 
-    criarNota(titulo, texto) {
-        const novaNota = { titulo, texto };
+    criarNota(titulo, texto, categoria) {
+        const novaNota = { titulo, texto, categoria };
         this.setState((prevState) => ({
             notas: [...prevState.notas, novaNota]
         }));
